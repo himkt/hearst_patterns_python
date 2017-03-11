@@ -1,5 +1,4 @@
 import re
-import string
 import nltk
 from nltk.tag.perceptron import PerceptronTagger
 
@@ -102,11 +101,8 @@ class HearstPatterns(object):
 					else:
 						general = nps[-1]
 						specifics = nps[:-1]
-						print str(general)
-						print str(nps)
 
 					for i in range(len(specifics)):
-						#print "%s, %s" % (specifics[i], general)
 						hyponyms.append((self.clean_hyponym_term(specifics[i]), self.clean_hyponym_term(general)))
 
 		return hyponyms
